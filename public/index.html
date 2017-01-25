@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Loan Calculator</title>
+  
+    <link href="/modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/modules/angular/angular.min.js"></script>
+    <script src="/javascripts/interestCalculator.js"></script>
+
+</head>
+
+<body>
+    <form ng-app="myApp">
+        <div ng-controller="interestCalculator">
+            <label>Loan Amount:</label>
+            <input type="text" ng-model="principal" />
+            <label>Annual Percentage Rate:</label>
+            <input type="text" ng-model="rate" />
+            <label>Length of Loan in Years:</label>
+            <input type="text" ng-model="time" />
+            <br />
+            <p>Total Amount You Will Pay: <strong>{{total() | currency}}</strong></p>
+            <p>Total Interest Alone You Will Pay: <strong>{{interest() | currency}}</strong></p>
+        </div>
+    </form>
+</body>
+
+</html>
